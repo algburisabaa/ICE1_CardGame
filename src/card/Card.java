@@ -31,9 +31,9 @@ public class Card {
 
    // Default constructor
    public Card() {
-       // Set default values (optional, you can leave it empty)
-       this.value = 1;  // Default value (Ace)
-       this.suit = "Hearts";  // Default suit
+   
+       this.value = value;
+       this.suit = suit;
    }
 
    // Getter and setter methods
