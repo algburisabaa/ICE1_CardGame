@@ -9,24 +9,47 @@ package card;
  * and then asks the user to pick a card and searches the array of cards
  * for the match to the user's card. To be used as starting code in ICE 1
  * @author srinivsi
+ * 
+ * Modified by: Sabaa Al-Gburi
+ * Student ID: 991736646
+ * Date: January 25, 2025
  */
+import java.util.Random;
+import java.util.Scanner; 
+
 public class CardTrick {
     
     public static void main(String[] args)
     {
+        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
         Card[] magicHand = new Card[7];
         
-        for (int i=0; i<magicHand.length; i++)
-        {
+        // Fill magicHand array with 7 random cards
+        for (int i = 0; i < magicHand.length; i++) {
             Card c = new Card();
-            //c.setValue(insert call to random number generator here)
-            //c.setSuit(Card.SUITS[insert call to random number between 0-3 here])
+            c.setValue(rand.nextInt(13) + 1);  // Random value between 1 and 13
+            c.setSuit(Card.SUITS[rand.nextInt(4)]);  // Random suit
+            magicHand[i] = c;
         }
         
-        //insert code to ask the user for Card value and suit, create their card
-        // and search magicHand here
-        //Then report the result here
-        // add one luckcard hard code 2,clubs
+        // Hard-code the lucky card (2 of Clubs)
+        Card luckyCard = new Card(2, "Clubs"); 
+
+        // Search for the luckyCard in the magicHand array
+        boolean found = false;
+        for (Card c : magicHand) {
+            if (c.getValue() == luckyCard.getValue() && c.getSuit().equalsIgnoreCase(luckyCard.getSuit())) {
+                found = true;
+                break;
+            }
+        }
+
+        // Report if the luckyCard was found
+        if (found) {
+            System.out.println("The lucky card (2 of Clubs) is in the magic hand!");
+        } else {
+            System.out.println("The lucky card (2 of Clubs) is not in the magic hand.");
+        }
     }
-    
 }

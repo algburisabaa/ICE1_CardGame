@@ -12,6 +12,9 @@ package card;
  * This code is to be used in ICE1. When you create your own branch,
  * add your name as a modifier.
  * @author srinivsi
+ * Modified by: Sabaa Al-Gburi
+ * Student ID: 991736646
+ * Date: January 25, 2025
  */
 public class Card {
 
@@ -19,34 +22,34 @@ public class Card {
    private int value;//1-13
 
    public static final String [] SUITS = {"Hearts", "Diamonds", "Spades", "Clubs"};
-    /**
-     * @return the suit
-     */
-    public String getSuit() {
-        return suit;
-    }
-
-    /**
-     * @param suit the suit to set
-     */
-    public void setSuit(String suit) {
-        this.suit = suit;
-    }
-
-    /**
-     * @return the value
-     */
-    public int getValue() {
-        return value;
-    }
-
-    /**
-     * @param value the value to set
-     */
-    public void setValue(int value) {
-        this.value = value;
-    }
    
-   
-    
+   // Constructor with parameters
+   public Card(int value, String suit) {
+       this.value = value;
+       this.suit = suit;
+   }
+
+   // Default constructor
+   public Card() {
+       // Set default values (optional, you can leave it empty)
+       this.value = 1;  // Default value (Ace)
+       this.suit = "Hearts";  // Default suit
+   }
+
+   // Getter and setter methods
+   public String getSuit() {
+       return suit;
+   }
+
+   public void setSuit(String suit) {
+       this.suit = suit;
+   }
+
+   public int getValue() {
+       return value;
+   }
+
+   public void setValue(int value) {
+       this.value = value;
+   }
 }
